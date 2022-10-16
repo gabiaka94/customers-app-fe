@@ -1,0 +1,15 @@
+<button type="button" (click)="goToNewCustomer()">NEW</button>
+<table>
+    <tr>
+        <th>Company name</th>
+        <th>Full Address</th>
+        <th>Subscription State</th>
+        <th>Number of Invoices</th>
+    </tr>
+    <tr *ngFor="let customer of customersList$ | async">
+        <td>{{customer.name}}</td>
+        <td>{{customer.address}}</td>
+        <td>{{customer.subscription}}</td>
+        <td class="invoices" (click)="goToDetail(customer)">{{customer.invoicesCount}}</td>
+    </tr>
+</table>
